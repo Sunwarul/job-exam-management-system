@@ -12,21 +12,23 @@ class ApplicationFormController extends Controller
     {
         $form = $formBuilder->create(\App\Forms\ApplicationForm::class, [
             'method' => 'POST',
-            'url' => route('application.store')
+            'url' => route('application.store'),
+            'files' => true
         ]);
 
         return view('application-form', compact('form'));
     }
 
-    public function store(FormBuilder $formBuilder)
+    public function store(FormBuilder $formBuilder, Request $request)
     {
+        $request->file('signature')->store('signatures');
+        $request->file('photo')->store('photos');
+
         $form = $formBuilder->create(\App\Forms\ApplicationForm::class);
         $form->redirectIfNotValid();
 
-        // if (!$form->isValid()) {
-        //     return redirect()->back()->withErrors($form->getErrors())->withInput();
-        // }
         Application::create($form->getFieldValues());
-        return redirect()->back()->with('success', 'success');
+
+        return redirect()->back()->with('success', 'Successfully Applied!');
     }
 }

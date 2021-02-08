@@ -8,7 +8,7 @@ class ApplicationForm extends Form
 {
     public function buildForm()
     {
-        $json_file = file_get_contents(__DIR__ . '/form.json');
+        $json_file = file_get_contents(__DIR__ . '/job-form.json');
         $formData = json_decode($json_file);
 
         foreach ($formData as $key => $value) {
@@ -28,8 +28,9 @@ class ApplicationForm extends Form
                     'placeholder' => $value->placeholder ?? '',
                 ],
                 'choices' => $myArr,
-                'rules' => $value->rules ?? 'required',
-                'selected' => 'male'
+                'rules' => $value->rules ?? [],
+                'selected' => $value->selected ?? '',
+                "label" => $value->label ?? '',
             ]);
         }
     }

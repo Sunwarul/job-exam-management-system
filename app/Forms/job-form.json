@@ -1,8 +1,9 @@
 [
     {
+        "label": "Full Name",
         "name": "name",
         "type": "text",
-        "placeholder": "Applicants Name",
+        "placeholder": "Applicant's Name",
         "class": "form-control",
         "id": "name",
         "rules": "required|min:5"
@@ -10,14 +11,14 @@
     {
         "name": "father_name",
         "type": "text",
-        "placeholder": "Father Name",
+        "placeholder": "Father's Name",
         "class": "form-control",
         "id": "father_name"
     },
     {
         "name": "mother_name",
         "type": "text",
-        "placeholder": "Mother Name",
+        "placeholder": "Mother's Name",
         "class": "form-control",
         "id": "mother_name"
     },
@@ -68,18 +69,19 @@
         "selected": "male"
     },
     {
-        "name": "freedom_fighter",
+        "name": "freedom_fighter_quota",
         "type": "select",
         "class": "form-control",
-        "id": "freedom_fighter",
+        "id": "freedom_fighter_status",
         "choices": {
-            "yes": "Applicable",
-            "no": "Not Applicable"
+            "yes": "Yes",
+            "no": "No"
         },
         "selected": "no"
     },
     {
-        "name": "Apply",
+        "label": "Apply Now",
+        "name": "submit_button",
         "type": "submit",
         "class": "btn btn-primary btn-block",
         "id": "submit_button"
