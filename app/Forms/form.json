@@ -64,7 +64,8 @@
         "choices": {
             "male": "Male",
             "female": "Female"
-        }
+        },
+        "selected": "male"
     },
     {
         "name": "freedom_fighter",
@@ -72,9 +73,10 @@
         "class": "form-control",
         "id": "freedom_fighter",
         "choices": {
-            "yes": "yes",
-            "no": "no"
-        }
+            "yes": "Applicable",
+            "no": "Not Applicable"
+        },
+        "selected": "no"
     },
     {
         "name": "Apply",

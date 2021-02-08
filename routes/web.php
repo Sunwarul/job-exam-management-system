@@ -11,7 +11,7 @@ Route::get('/', [GuestPagesController::class, 'welcome'])->name('welcome');
 
 // Show job application form and register user after submitting it
 Route::get('/apply-for-job', [ApplicationFormController::class, 'create'])->name('application.index');
-Route::post('/apply-for-job', [ApplicationFormController::class, 'store'])->name('application.store');
+Route::post('/apply-for-job-post', [ApplicationFormController::class, 'store'])->name('application.store');
 
 // Login, Logout, Forget, etc Default UI Functionalities
 Auth::routes();
