@@ -9,7 +9,8 @@
 @section('content')
 
     <!-- /.card-header -->
-    <div class="card-body">
+    <div class="card-body ">
+        <h1>Create Exam Form</h1>
         {!! form($form) !!}
         {{-- <form role="form">
             <div class="row">

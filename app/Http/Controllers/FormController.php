@@ -15,7 +15,8 @@ class FormController extends Controller
      */
     public function index()
     {
-        return view('admin.forms.index');
+        $forms = Form::all();
+        return view('admin.forms.index', compact('forms'));
     }
 
     /**
@@ -25,7 +26,10 @@ class FormController extends Controller
      */
     public function create(FormBuilder $formBuilder)
     {
-        $form = $formBuilder->create(\App\Forms\JobForm::class);
+        $form = $formBuilder->create(\App\Forms\JobForm::class, [
+            'method' => 'POST',
+            'url' => route('forms.store')
+        ]);
 
         return view('admin.forms.create', compact('form'));
     }
@@ -38,7 +42,11 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if (isset($request['exam_circular_file'])) {
+            $request->file('exam_circular_file')->store('circulars');
+        }
+        Form::create($request->all());
+        return redirect()->back()->with('success', 'Exam created!');
     }
 
     /**

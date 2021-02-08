@@ -15,10 +15,11 @@ class CreateFormsTable extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->string('circular')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->string('exam_name');
+            $table->string('exam_description')->nullable();
+            $table->string('exam_circular_file')->nullable();
+            $table->timestamp('exam_date');
+            $table->enum('exam_activity_status', ['taken', 'not_taken'])->default('not_taken');
             $table->timestamps();
         });
     }
