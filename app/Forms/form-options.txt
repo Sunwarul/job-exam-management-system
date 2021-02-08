@@ -1,0 +1,36 @@
+"wrapper" => array:1 [▶]
+"attr" => array:3 [▶]
+"help_block" => array:3 [▶]
+"value" => null
+"default_value" => null
+"label" => "Name"
+"label_show" => true
+"is_child" => false
+"label_attr" => array:1 [▶]
+"errors" => array:1 [▶]
+"rules" => []
+"error_messages" => []
+"choices" => array:2 [▶]
+"selected" => "male"
+"real_name" => "name"
+"wrapperAttrs" => "class="form-group" "
+"errorAttrs" => "class="text-danger" "
+
+#fields: array:10 [▼
+    "name" => Kris\LaravelFormBuilder\Fields\InputType {#1252 ▶}
+    "father_name" => Kris\LaravelFormBuilder\Fields\InputType {#1253 ▶}
+    "mother_name" => Kris\LaravelFormBuilder\Fields\InputType {#1254 ▶}
+    "birthday" => Kris\LaravelFormBuilder\Fields\InputType {#1256 ▶}
+    "photo" => Kris\LaravelFormBuilder\Fields\InputType {#1255 ▶}
+    "signature" => Kris\LaravelFormBuilder\Fields\InputType {#1257 ▶}
+    "phone" => Kris\LaravelFormBuilder\Fields\InputType {#1258 ▶}
+    "email" => Kris\LaravelFormBuilder\Fields\InputType {#1259 ▶}
+    "gender" => Kris\LaravelFormBuilder\Fields\SelectType {#1260 ▶}
+    "Apply" => Kris\LaravelFormBuilder\Fields\ButtonType {#1261 ▶}
+  ]
+#formOptions: array:4 [▼
+    "method" => "GET"
+    "url" => null
+    "attr" => []
+    "files" => true
+  ]

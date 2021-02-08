@@ -1,0 +1,85 @@
+[
+    {
+        "name": "name",
+        "type": "text",
+        "placeholder": "Applicants Name",
+        "class": "form-control",
+        "id": "name",
+        "rules": "required|min:5"
+    },
+    {
+        "name": "father_name",
+        "type": "text",
+        "placeholder": "Father Name",
+        "class": "form-control",
+        "id": "father_name"
+    },
+    {
+        "name": "mother_name",
+        "type": "text",
+        "placeholder": "Mother Name",
+        "class": "form-control",
+        "id": "mother_name"
+    },
+    {
+        "name": "birthday",
+        "type": "date",
+        "placeholder": "Birthday",
+        "class": "form-control",
+        "id": "birthday"
+    },
+    {
+        "name": "photo",
+        "type": "file",
+        "placeholder": "Applicants Photo",
+        "class": "form-control-file",
+        "id": "photo"
+    },
+    {
+        "name": "signature",
+        "type": "file",
+        "placeholder": "Applicants Signature",
+        "class": "form-control-file",
+        "id": "signature"
+    },
+    {
+        "name": "phone",
+        "type": "tel",
+        "placeholder": "Applicants phone",
+        "class": "form-control",
+        "id": "phone"
+    },
+    {
+        "name": "email",
+        "type": "email",
+        "placeholder": "Applicants email",
+        "class": "form-control",
+        "id": "email"
+    },
+    {
+        "name": "gender",
+        "type": "select",
+        "class": "form-control",
+        "id": "gender",
+        "choices": {
+            "male": "Male",
+            "female": "Female"
+        }
+    },
+    {
+        "name": "freedom_fighter",
+        "type": "select",
+        "class": "form-control",
+        "id": "freedom_fighter",
+        "choices": {
+            "yes": "yes",
+            "no": "no"
+        }
+    },
+    {
+        "name": "Apply",
+        "type": "submit",
+        "class": "btn btn-primary btn-block",
+        "id": "submit_button"
+    }
+]

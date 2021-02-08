@@ -11,7 +11,7 @@ class GuestPagesController extends Controller
         return view('welcome');
     }
 
-    public function apply()
+    public function applicationForm()
     {
         return view('application-form');
     }

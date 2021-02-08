@@ -1,0 +1,80 @@
+name
+father_name
+mother_name
+p('date_of_birth
+photo
+signature
+phone
+email
+gender
+employment_status
+ethnic_minority
+freedom_fighter
+marital_status
+disability
+nationality
+national_id
+height
+weight
+chest
+
+// Educational Information
+// 1. SSC
+$table->enum('ssc_type',
+['ssc', 'dakhil', 'vocational', 'olevel', 'equivalent'
+]);
+   ssc_board
+   ssc_roll
+   ssc_result
+   ssc_group
+   ssc_passing_year
+
+// 2. HSC
+$table->enum('hsc_type',
+['hsc', 'alim', 'business_management', 'alevel', 'diploma', 'equivalent'
+]);
+   hsc_board
+   hsc_roll
+   hsc_result
+   hsc_group
+   hsc_passing_year
+
+
+// Graduation
+   graduation_examination_title
+   graduation_subject
+   graduation_institute
+   graduation_result
+   graduation_passing_year
+   graduation_course_duration  ('4')->nullable();
+
+
+// Masters
+   masters_examination_title')->nullable();
+   masters_subject')->nullable();
+   masters_institute')->nullable();
+   masters_result')->nullable();
+   masters_passing_year')->nullable();
+   masters_course_duration')->nullable();
+
+
+// Address 1
+   permanent_village
+   permanent_district
+   permanent_upazilla
+   permanent_post_office
+   permanent_postal_code
+
+// Address 2
+   present_village')->nullable();
+   present_district')->nullable();
+   present_upazilla')->nullable();
+   present_post_office')->nullable();
+   present_postal_code')->nullable();
+
+// Manual payment
+   payment_option')->nullable();
+   transaction_number')->nullable();
+
+// DateTime
+$table->timestamps();

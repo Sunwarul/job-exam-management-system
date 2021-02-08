@@ -1,17 +1,56 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
 
-@section('title', 'Applicant dashboard')
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Apply for Job</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @include('admin.partials.header')
+</head>
 
-    @push('css')
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
 
-    @endpush
+        @include('admin.partials.navbar')
 
-@section('content')
+        @include('admin.partials.siderbar')
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    @yield('content')
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
 
-    Applicant
+        @include('admin.partials.footer')
 
-@endsection
+    </div>
+    <!-- ./wrapper -->
 
-@push('js')
+    <!-- jQuery -->
+    <script src="/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
 
-@endpush
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- overlayScrollbars -->
+    <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/dist/js/adminlte.js"></script>
+
+    @stack('js')
+</body>
+
+</html>

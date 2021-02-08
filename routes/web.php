@@ -1,14 +1,17 @@
 <?php
 
+use App\Http\Controllers\ApplicationFormController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\GuestPagesController;
+use App\Http\Controllers\SongsController;
 use Illuminate\Support\Facades\Route;
 
 // Welcome page
 Route::get('/', [GuestPagesController::class, 'welcome'])->name('welcome');
 
-// Job application form, register a user after it
-Route::get('/apply-for-job', [GuestPagesController::class, 'apply'])->name('apply');
+// Show job application form and register user after submitting it
+Route::get('/apply-for-job', [ApplicationFormController::class, 'create'])->name('application.index');
+Route::post('/apply-for-job', [ApplicationFormController::class, 'store'])->name('application.store');
 
 // Login, Logout, Forget, etc Default UI Functionalities
 Auth::routes();

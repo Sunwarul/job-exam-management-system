@@ -1,38 +1,189 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title', 'Application form')
 
-    <title>Laravel</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @push('css')
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Nunito';
-        }
+    @endpush
 
-    </style>
-</head>
+@section('content')
 
-<body class="antialiased">
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h1>Fill out this form</h1>
-            </div>
-            <div class="card-body">
-                <form method="POST" action="{{ route('welcome') }}">
-                    <input type="text" name="name" placeholder="Full Name" class="form-control">
-                    <input type="text" name="password" placeholder="Password" class="form-control">
-                    <input type="submit" value="Apply">
-                </form>
-            </div>
+    <div class="card-header bg-info text-lightblue d-flex justify-content-between align-items-center">
+        <div>
+            <a href="{{ route('welcome') }}" class="btn btn-light">
+                <i class="fas fa-arrow-left"></i>
+                Back</a>
+        </div>
+        <div>
+            <h1 class="text-ligth">Fill out this form carefully</h1>
         </div>
     </div>
-</body>
+    <div class="card-body">
+        {!! form($form) !!}
+        {{-- <form role="form">
 
-</html>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Personal Information</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Applicant's Name</label>
+                                <input type="text" class="form-control" name="name" placeholder="Applicant's Name">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Father's Name</label>
+                                <input type="text" class="form-control" name="father_name" placeholder="Father's Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Mother's Name</label>
+                                <input type="text" class="form-control" name="mother_name" placeholder="Mother's Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Date of birth</label>
+                                <input type="date" class="form-control" name="date_of_birth" placeholder="Date of birth">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Photo</label>
+                                <input type="file" name="photo" class="form-control-file" placeholder="Upload image">
+                            </div>
+                            <div class="form-group">
+                                <label>Signature</label>
+                                <input type="file" name="signature" class="form-control-file" placeholder="Upload image">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="phone_number" name="phone" class="form-control" placeholder="Phone Number">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label>Select Gender</label>
+                                <select class="form-control" name="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Employment Status</label>
+                                <select class="form-control" name="employment_status">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label>Employment Status</label>
+                                <select class="form-control" name="employment_status">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Employment Status</label>
+                                <select class="form-control" name="employment_status">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Employment Status</label>
+                                <select class="form-control" name="employment_status">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Employment Status</label>
+                                <select class="form-control" name="employment_status">
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+
+
+
+
+
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="phone_number" name="phone" class="form-control" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="phone_number" name="phone" class="form-control" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="phone_number" name="phone" class="form-control" placeholder="Phone Number">
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="card card-light">
+                            <div class="card-header">
+                                <h3 class="card-title">Personal Information</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" placeholder="Full Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" placeholder="Full Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" placeholder="Full Name">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label>Textarea</label>
+                            <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+        </form> --}}
+    </div>
+
+@endsection
+
+@push('js')
+
+@endpush
