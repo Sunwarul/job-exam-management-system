@@ -26,8 +26,9 @@ class CreateApplicationsTable extends Migration
             $table->string('signature');
             $table->string('phone');
             $table->string('email');
+            $table->string('password');
             $table->string('gender');
-
+            $table->string('freedom_fighter_quota');
             // DateTime
             $table->timestamps();
         });

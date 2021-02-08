@@ -10,7 +10,8 @@
 
     <!-- /.card-header -->
     <div class="card-body">
-        <form role="form">
+        {!! form($form) !!}
+        {{-- <form role="form">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
@@ -34,7 +35,7 @@
                 </div>
 
             </div>
-        </form>
+        </form> --}}
     </div>
     <!-- /.card-body -->
 

@@ -22,14 +22,14 @@ class ApplicationForm extends Form
             }
 
             $this->add($value->name, $value->type, [
+                'choices' => $myArr,
+                'selected' => $value->selected ?? '',
                 'attr' => [
                     'class' => $value->class ?? '',
                     'id' => $value->id ?? $value->name,
-                    'placeholder' => $value->placeholder ?? '',
+                    'placeholder' => $value->placeholder ?? null,
                 ],
-                'choices' => $myArr,
                 'rules' => $value->rules ?? [],
-                'selected' => $value->selected ?? '',
                 "label" => $value->label ?? '',
             ]);
         }

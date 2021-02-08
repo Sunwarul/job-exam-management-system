@@ -9,9 +9,15 @@
         {{ $message }}
     </div>
 @endif
-@if ($message = Session::get('errors'))
-    <div class="alert alert-danger alert-block text-center">
-        {{ $message }}
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <p><strong>Opps Something went wrong!</strong></p>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
     </div>
 @endif
 

@@ -34,14 +34,16 @@
         "type": "file",
         "placeholder": "Applicants Photo",
         "class": "form-control-file",
-        "id": "photo"
+        "id": "photo",
+        "rules": "required|mimes:png,jpg,jpeg"
     },
     {
         "name": "signature",
         "type": "file",
         "placeholder": "Applicants Signature",
         "class": "form-control-file",
-        "id": "signature"
+        "id": "signature",
+        "rules": "required|mimes:png,jpg,jpeg"
     },
     {
         "name": "phone",
@@ -58,6 +60,14 @@
         "id": "email"
     },
     {
+        "name": "password",
+        "type": "password",
+        "class": "form-control",
+        "placeholder": "Password",
+        "id": "password"
+    },
+    {
+        "label": "Select Gender",
         "name": "gender",
         "type": "select",
         "class": "form-control",

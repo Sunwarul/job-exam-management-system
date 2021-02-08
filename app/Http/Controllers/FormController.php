@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Form;
 use Illuminate\Http\Request;
+use Kris\LaravelFormBuilder\FormBuilder;
 
 class FormController extends Controller
 {
@@ -22,9 +23,11 @@ class FormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(FormBuilder $formBuilder)
     {
-        return view('admin.forms.create');
+        $form = $formBuilder->create(\App\Forms\JobForm::class);
+
+        return view('admin.forms.create', compact('form'));
     }
 
     /**
