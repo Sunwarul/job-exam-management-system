@@ -55,7 +55,7 @@ class FormController extends Controller
             $request->file('exam_circular_file')->store('circulars');
         }
         Form::create($request->all());
-        return redirect()->back()->with('success', 'Exam created!');
+        return redirect()->route('forms.index')->with('success', 'Exam created!');
     }
 
     /**

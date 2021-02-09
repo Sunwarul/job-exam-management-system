@@ -2,28 +2,25 @@
     {
         "label": "Full Name",
         "name": "name",
-        "type": "text",
-        "placeholder": "Applicant's Name",
-        "class": "form-control",
-        "id": "name",
+        "placeholder": "Applicant's name",
         "rules": "required|min:5"
     },
     {
         "name": "father_name",
         "type": "text",
-        "placeholder": "Father's Name",
+        "placeholder": "Father's name",
         "class": "form-control",
         "id": "father_name"
     },
     {
         "name": "mother_name",
         "type": "text",
-        "placeholder": "Mother's Name",
+        "placeholder": "Mother's name",
         "class": "form-control",
         "id": "mother_name"
     },
     {
-        "name": "birthday",
+        "name": "date_of_birth",
         "type": "date",
         "placeholder": "Birthday",
         "class": "form-control",
@@ -32,14 +29,13 @@
     {
         "name": "photo",
         "type": "file",
-        "placeholder": "Applicants Photo",
+        "placeholder": "Applicants photo",
         "class": "form-control-file",
         "id": "photo"
     },
     {
         "name": "signature",
         "type": "file",
-        "placeholder": "Applicants Signature",
         "class": "form-control-file",
         "id": "signature"
     },
@@ -53,7 +49,6 @@
     {
         "name": "email",
         "type": "email",
-        "placeholder": "Applicants email",
         "class": "form-control",
         "id": "email"
     },
@@ -61,37 +56,227 @@
         "name": "password",
         "type": "password",
         "class": "form-control",
-        "placeholder": "Password",
         "id": "password"
     },
     {
-        "label": "Select Gender",
         "name": "gender",
         "type": "select",
         "class": "form-control",
         "id": "gender",
         "choices": {
             "male": "Male",
-            "female": "Female"
+            "female": "Female",
+            "other": "Other"
         },
         "selected": "male"
     },
     {
         "name": "freedom_fighter_quota",
         "type": "select",
-        "class": "form-control",
-        "id": "freedom_fighter_status",
         "choices": {
-            "yes": "Yes",
-            "no": "No"
+            "yes": "yes",
+            "no": "no"
         },
         "selected": "no"
+    },
+    {
+        "name": "employment_status",
+        "type": "select",
+        "choices": {
+            "yes": "yes",
+            "no": "no"
+        },
+        "selected": "no"
+    },
+    {
+        "name": "ethnic_minority_status",
+        "type": "select",
+        "choices": {
+            "yes": "yes",
+            "no": "no"
+        },
+        "selected": "no"
+    },
+    {
+        "name": "marital_status",
+        "type": "select",
+        "choices": {
+            "yes": "yes",
+            "no": "no"
+        },
+        "selected": "no"
+    },
+    {
+        "name": "disability_status",
+        "type": "select",
+        "choices": {
+            "yes": "yes",
+            "no": "no"
+        },
+        "selected": "no"
+    },
+    {
+        "name": "nationality"
+    },
+    {
+        "name": "national_id_card_number"
+    },
+    {
+        "name": "height"
+    },
+    {
+        "name": "weight"
+    },
+    {
+        "name": "chest"
+    },
+    {
+        "name": "ssc_exam_type",
+        "type": "select",
+        "choices": {
+            "ssc": "SSC",
+            "dakhil": "dakhil",
+            "vocational": "vocational",
+            "o_level": "o_level",
+            "equivalent": "equivalent"
+        },
+        "selected": "no"
+    },
+    {
+        "name": "ssc_board"
+    },
+    {
+        "name": "ssc_roll_number"
+    },
+    {
+        "name": "ssc_result"
+    },
+    {
+        "name": "ssc_group",
+        "type": "select",
+        "choices": {
+            "science": "science",
+            "humanities": "humanities",
+            "business_studies": "business_studies",
+            "other": "other"
+        },
+        "selected": "science"
+    },
+    {
+        "name": "ssc_passing_year"
+    },
+    {
+        "name": "hsc_exam_type",
+        "type": "select",
+        "choices": {
+            "hsc": "hsc",
+            "alim": "alim",
+            "vocational": "vocational",
+            "a_level": "a_level",
+            "equivalent": "equivalent"
+        },
+        "selected": "no"
+    },
+    {
+        "name": "hsc_board"
+    },
+    {
+        "name": "hsc_roll_number"
+    },
+    {
+        "name": "hsc_result"
+    },
+    {
+        "name": "hsc_group",
+        "type": "select",
+        "choices": {
+            "science": "science",
+            "humanities": "humanities",
+            "business_studies": "business_studies",
+            "other": "other"
+        },
+        "selected": "science"
+    },
+    {
+        "name": "hsc_passing_year"
+    },
+    {
+        "name": "graduation_examination_title",
+        "placeholder": "i.e. B.Sc (Engineering) in Electrical and Electronic Engineering"
+    },
+    {
+        "name": "graduation_subject"
+    },
+    {
+        "name": "graduation_institute_name"
+    },
+    {
+        "name": "graduation_result"
+    },
+    {
+        "name": "graduation_passing_year"
+    },
+    {
+        "name": "graduation_course_duration"
+    },
+    {
+        "name": "masters_examination_title",
+        "placeholder": "i.e. M.Sc in Electrical and Electronic Engineering"
+    },
+    {
+        "name": "masters_subject"
+    },
+    {
+        "name": "masters_institute_name"
+    },
+    {
+        "name": "masters_result"
+    },
+    {
+        "name": "masters_passing_year"
+    },
+    {
+        "name": "masters_course_duration"
+    },
+    {
+        "name": "permanent_address",
+        "type": "textarea"
+    },
+    {
+        "name": "present_address",
+        "type": "textarea"
+    },
+    {
+        "name": "payment_method",
+        "type": "select",
+        "choices": {
+            "bkash": "bkash",
+            "dutch_bangla": "dutch_bangla",
+            "bank": "bank",
+            "cash": "cash",
+            "rocket": "rocket",
+            "nagod": "nagod",
+            "other": "other"
+        },
+        "selected": "bkash"
+    },
+    {
+        "label": "***Enter Payment Account Number",
+        "name": "payment_account_number",
+        "type": "text",
+        "placeholder": "Enter your payment methods account number"
+    },
+    {
+        "label": "***Enter the Transaction ID / Receipt Number you get after payment",
+        "name": "transaction_id",
+        "type": "text",
+        "placeholder": "Collect and insert Transaction ID/Number after payment"
     },
     {
         "label": "Apply Now",
         "name": "submit_button",
         "type": "submit",
-        "class": "btn btn-primary btn-block",
+        "class": "btn btn-lg btn-info btn-block",
         "id": "submit_button"
     }
 ]

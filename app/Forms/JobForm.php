@@ -30,7 +30,7 @@ class JobForm extends Form
                 'rules' => 'required'
             ])
             ->add('exam_activity_status', 'select', [
-                'choices' =>  ['taken' => 'Exam Taken', 'not_taken' => 'Not taken yet'],
+                'choices' =>  ['not_taken' => 'Not taken yet', 'taken' => 'Exam Taken',],
                 'selected' => 'not_taken',
                 'rules' => 'required'
             ])

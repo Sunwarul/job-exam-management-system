@@ -10,4 +10,9 @@ class Application extends Model
     use HasFactory;
     protected $guarded = [];
     protected $table = 'applications';
+
+    public function form()
+    {
+        return $this->belongsTo(\App\Models\Form::class);
+    }
 }
