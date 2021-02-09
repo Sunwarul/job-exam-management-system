@@ -268,7 +268,7 @@
     },
     {
         "label": "***Enter the Transaction ID / Receipt Number you get after payment",
-        "name": "transaction_id",
+        "name": "transaction_number",
         "type": "text",
         "placeholder": "Collect and insert Transaction ID/Number after payment"
     },

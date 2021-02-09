@@ -98,7 +98,7 @@ class CreateApplicationsTable extends Migration
             // Manual payments
             $table->string('payment_method')->nullable();
             $table->string('payment_account_number')->nullable();
-            $table->string('transaction_id')->nullable();
+            $table->string('transaction_number')->nullable();
             // DateTime
             $table->timestamps();
         });

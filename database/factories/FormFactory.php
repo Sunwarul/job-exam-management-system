@@ -22,7 +22,8 @@ class FormFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'exam_name' => $this->faker->name,
+            'exam_date' => now()
         ];
     }
 }

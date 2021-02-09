@@ -11,6 +11,7 @@ use Kris\LaravelFormBuilder\FormBuilder;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Models\Payment;
 
 class ApplicationFormController extends Controller
 {
@@ -50,21 +51,38 @@ class ApplicationFormController extends Controller
      */
     public function store(FormBuilder $formBuilder, Request $request)
     {
+        // Construct the form
         $form = $formBuilder->create(\App\Forms\ApplicationForm::class);
         $form->redirectIfNotValid();
 
+        // If photo and signature set, then upload them to storage or skip
         if (isset($request['photo']) && isset($request['signature'])) {
             $request->file('signature')->store('signatures');
             $request->file('photo')->store('photos');
         }
-        Application::create($form->getFieldValues());
 
+        // Application model instance save to db
+        $form_data = $form->getFieldValues();
+        $application = Application::create($form_data);
+
+        // Create a user from the application form and redirect to dashboard
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
         Auth::login($user);
+
+        // Create a Payment model instance and save to database
+
+        $payment = Payment::create([
+            'user_id' => $user->id,
+            'application_id' => $application->id,
+            'payment_method' => $request->payment_method,
+            'payment_account_number' => $request->payment_account_number,
+            'transaction_number' => $request->transaction_number
+        ]);
+
         return redirect()->route("home")->with('success', 'Successfully Applied');
     }
 }

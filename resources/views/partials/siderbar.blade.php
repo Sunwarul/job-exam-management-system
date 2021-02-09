@@ -61,17 +61,17 @@
         ->isAdmin())
                     <li class="nav-item">
                         <a href="" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
+                            <i class="nav-icon fas fa-dollar-sign"></i>
                             <p>
-                                Applied forms
+                                Payments
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
+                            <i class="nav-icon fas fa-envelope"></i>
                             <p>
-                                Payments
+                                Contact
                             </p>
                         </a>
                     </li>
