@@ -14,16 +14,14 @@ class CreateApplicationsTable extends Migration
     public function up()
     {
         Schema::create('applications', function (Blueprint $table) {
-
             $table->id();
-
             // Personal Information
             $table->string('name');
             $table->string('father_name');
             $table->string('mother_name');
             $table->timestamp('birthday');
-            $table->string('photo');
-            $table->string('signature');
+            $table->string('photo')->nullable();
+            $table->string('signature')->nullable();
             $table->string('phone');
             $table->string('email');
             $table->string('password');

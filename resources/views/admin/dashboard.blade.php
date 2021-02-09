@@ -7,15 +7,15 @@
     <title>Admin Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @include('admin.partials.header')
+    @include('partials.header')
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        @include('admin.partials.navbar')
+        @include('partials.navbar')
 
-        @include('admin.partials.siderbar')
+        @include('partials.siderbar')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Main content -->
@@ -28,7 +28,7 @@
         </div>
         <!-- /.content-wrapper -->
 
-        @include('admin.partials.footer')
+        @include('partials.footer')
 
     </div>
     <!-- ./wrapper -->

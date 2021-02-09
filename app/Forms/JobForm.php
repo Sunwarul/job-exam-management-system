@@ -13,6 +13,7 @@ class JobForm extends Form
                 'attr' => [
                     'placeholder' => 'Exam name'
                 ],
+                'rules' => 'required'
             ])
             ->add('exam_description', 'textarea', [
                 'attr' => [
@@ -25,20 +26,16 @@ class JobForm extends Form
                     'class' => 'form-control-file',
                 ],
             ])
-            ->add('exam_date', 'date')
+            ->add('exam_date', 'date', [
+                'rules' => 'required'
+            ])
             ->add('exam_activity_status', 'select', [
                 'choices' =>  ['taken' => 'Exam Taken', 'not_taken' => 'Not taken yet'],
-                'selected' => 'not_taken'
+                'selected' => 'not_taken',
+                'rules' => 'required'
             ])
             ->add('Create Exam', 'submit', [
                 'attr' => ['class' => 'btn btn-primary']
-            ])
-            ->add('All Exams', 'button', [
-                'attr' => [
-                    'class' => 'btn btn-primary',
-                    // 'onclick' => "window.location.href='admin/forms'"
-                ],
-                'href' => 'admin/forms'
             ]);
     }
 }

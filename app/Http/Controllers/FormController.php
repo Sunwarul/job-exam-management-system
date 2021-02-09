@@ -8,6 +8,15 @@ use Kris\LaravelFormBuilder\FormBuilder;
 
 class FormController extends Controller
 {
+
+    /**
+     * Admin middleware
+     */
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     /**
      * Display a listing of the resource.
      *

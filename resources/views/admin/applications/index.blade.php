@@ -10,40 +10,60 @@
 
     <!-- /.card-header -->
     <div class="card-body">
-        <h1>Users</h1>
-
         <div class="row">
             <div class="col-12">
 
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">DataTable with default features</h3>
+                    <div class="card-header d-flex justify-content-around">
+                        <div>
+                            <h1 class="">All Examination</h1>
+                        </div>
+                        <div>
+                            <h1><a href="{{ route('applications.create') }}" class="btn btn-primary">Create New
+                                    Examination</a>
+                            </h1>
+                        </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="example1" class="table table-bordered table-striped text-center">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th>Name</th>
+                                    <th>Father</th>
+                                    <th>Mother</th>
                                     <th>Email</th>
-                                    <th>Created At</th>
+                                    <th>Photo</th>
+                                    <th>Phone</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $user)
+                                @foreach ($applications as $application)
                                     <tr>
-                                        <td>{{ $user->id }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ $user->created_at }}</td>
+                                        <td>{{ $application->name }}</td>
+                                        <td>{{ $application->father_name }}</td>
+                                        <td>{{ $application->mother_name }}</td>
+                                        <td>{{ $application->email }}</td>
+                                        <td>{{ $application->photo }}</td>
+                                        <td>{{ $application->phone }}
+                                        </td>
                                         <td>
                                             <a href="">Edit</a>
                                         </td>
                                     </tr>
                                 @endforeach
+
                             </tbody>
+                            {{-- <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Circular File</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot> --}}
                         </table>
                     </div>
                     <!-- /.card-body -->

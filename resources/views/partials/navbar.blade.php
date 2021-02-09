@@ -9,6 +9,23 @@
             <a href="{{ route('home') }}" class="nav-link">Home</a>
         </li>
     </ul>
+    @if (auth()
+        ->user()
+        ->isAdmin())
+        <!-- SEARCH FORM -->
+        <form class="form-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    @endif
+
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -21,8 +38,10 @@
         </li>
 
         <li class=" nav-item dropdown">
-            <a href="{{ route('logout') }}" class="nav-link btn-secondary text-white"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+            <a href="{{ route('logout') }}" class="nav-link btn-light"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="fas fa-power-off"></i>
+                Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 {{ csrf_field() }}
             </form>

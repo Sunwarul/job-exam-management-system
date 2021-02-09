@@ -14,12 +14,18 @@
             <div class="col-12">
 
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">All Examination</h3>
+                    <div class="card-header d-flex justify-content-around">
+                        <div>
+                            <h1 class="">All Examination</h1>
+                        </div>
+                        <div>
+                            <h1><a href="{{ route('forms.create') }}" class="btn btn-primary">Create New Examination</a>
+                            </h1>
+                        </div>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="example1" class="table table-bordered table-striped text-center">
                             <thead>
                                 <tr>
                                     <th>Exam Name</th>
@@ -35,14 +41,15 @@
                                         <td>{{ $form->exam_name }}</td>
                                         <td>{{ $form->exam_circular_file }}</td>
                                         <td>{{ $form->exam_date }}</td>
-                                        <td>{{ $form->exam_activity_status == 'taken' ? 'Taken' : 'Not Taken' }}</td>
+                                        <td>{{ $form->exam_activity_status == 'taken' ? 'Already Taken ✅' : 'Not Taken Yet 🔜' }}
+                                        </td>
                                         <td>
                                             <a href="">Edit</a>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
-                            <tfoot>
+                            {{-- <tfoot>
                                 <tr>
                                     <th>Name</th>
                                     <th>Circular File</th>
@@ -50,7 +57,7 @@
                                     <th>Status</th>
                                     <th>Actions</th>
                                 </tr>
-                            </tfoot>
+                            </tfoot> --}}
                         </table>
                     </div>
                     <!-- /.card-body -->

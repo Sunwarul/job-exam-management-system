@@ -31,6 +31,9 @@ class ApplicationForm extends Form
                 ],
                 'rules' => $value->rules ?? [],
                 "label" => $value->label ?? '',
+                "wrapper" => [
+                    'class' => 'form-group'
+                ]
             ]);
         }
     }

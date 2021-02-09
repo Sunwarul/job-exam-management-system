@@ -34,16 +34,14 @@
         "type": "file",
         "placeholder": "Applicants Photo",
         "class": "form-control-file",
-        "id": "photo",
-        "rules": "required|mimes:png,jpg,jpeg"
+        "id": "photo"
     },
     {
         "name": "signature",
         "type": "file",
         "placeholder": "Applicants Signature",
         "class": "form-control-file",
-        "id": "signature",
-        "rules": "required|mimes:png,jpg,jpeg"
+        "id": "signature"
     },
     {
         "name": "phone",

@@ -53,9 +53,10 @@ class ApplicationFormController extends Controller
         $form = $formBuilder->create(\App\Forms\ApplicationForm::class);
         $form->redirectIfNotValid();
 
-        $request->file('signature')->store('signatures');
-        $request->file('photo')->store('photos');
-
+        if (isset($request['photo']) && isset($request['signature'])) {
+            $request->file('signature')->store('signatures');
+            $request->file('photo')->store('photos');
+        }
         Application::create($form->getFieldValues());
 
         $user = User::create([
