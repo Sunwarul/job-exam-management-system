@@ -1,13 +1,13 @@
 <template>
     <v-app app>
-        <v-card>
+        <v-card class="m-5" background-color="light-blue">
             <v-card-title>
-                All Users
+                <v-icon>mdi-account-group</v-icon> &nbsp;&nbsp; All Users
                 <v-spacer></v-spacer>
                 <v-text-field
                     v-model="search"
                     append-icon="mdi-magnify"
-                    label="Search"
+                    label="Search Users"
                     single-line
                     hide-details
                 ></v-text-field>
@@ -31,7 +31,7 @@ export default {
                 { text: "User ID", value: "id" },
                 { text: "User Name", value: "name" },
                 { text: "User Email", value: "email" },
-                { text: "Time", value: "created_at" },
+                { text: "Created At", value: "created_at" },
             ],
         };
     },
