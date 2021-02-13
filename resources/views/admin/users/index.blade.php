@@ -3,19 +3,11 @@
 @section('title', 'Index')
 
     @push('css')
-
+        <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
     @endpush
 
 @section('content')
-    <div class="card-body">
-        <h1>Users</h1>
-
-        <div class="row">
-            <div class="col-12">
-                <users-component></users-component>
-            </div>
-        </div>
-    </div>
+    <users-component></users-component>
 @endsection
 
 @push('js')
