@@ -1883,7 +1883,7 @@ __webpack_require__.r(__webpack_exports__);
         text: "User Email",
         value: "email"
       }, {
-        text: "Time",
+        text: "Created At",
         value: "created_at"
       }]
     };
@@ -1950,18 +1950,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-/* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuetify */ "./node_modules/vuetify/dist/vuetify.js");
-/* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vuetify__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify/dist/vuetify.min.css */ "./node_modules/vuetify/dist/vuetify.min.css");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuetify */ "./node_modules/vuetify/dist/vuetify.js");
+/* harmony import */ var vuetify__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuetify__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuetify/dist/vuetify.min.css */ "./node_modules/vuetify/dist/vuetify.min.css");
 
 
-vue__WEBPACK_IMPORTED_MODULE_0__.default.use((vuetify__WEBPACK_IMPORTED_MODULE_1___default()));
 
+vue__WEBPACK_IMPORTED_MODULE_1__.default.use((vuetify__WEBPACK_IMPORTED_MODULE_2___default()));
 var opts = {};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new (vuetify__WEBPACK_IMPORTED_MODULE_1___default())({
-  opts: opts
-}));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new (vuetify__WEBPACK_IMPORTED_MODULE_2___default())(opts));
 
 /***/ }),
 
@@ -2675,17 +2673,19 @@ var render = function() {
     [
       _c(
         "v-card",
+        { staticClass: "m-5", attrs: { "background-color": "light-blue" } },
         [
           _c(
             "v-card-title",
             [
-              _vm._v("\n            All Users\n            "),
+              _c("v-icon", [_vm._v("mdi-account-group")]),
+              _vm._v("    All Users\n            "),
               _c("v-spacer"),
               _vm._v(" "),
               _c("v-text-field", {
                 attrs: {
                   "append-icon": "mdi-magnify",
-                  label: "Search",
+                  label: "Search Users",
                   "single-line": "",
                   "hide-details": ""
                 },
