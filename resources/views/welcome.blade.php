@@ -15,7 +15,7 @@
                     Welcome to <strong>{{ config('app.name') }}</strong>
                 </h1>
                 <div>
-                    <a class="btn btn-bg btn-block my-3 p-2 btn-success" href="{{ route('application.index') }}">
+                    <a class="btn btn-bg btn-block my-3 p-2 btn-success" href="{{ route('application_form.index') }}">
                         Apply for job
                     </a>
                 </div>

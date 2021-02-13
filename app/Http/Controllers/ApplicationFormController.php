@@ -34,7 +34,7 @@ class ApplicationFormController extends Controller
     {
         $form = $formBuilder->create(\App\Forms\ApplicationForm::class, [
             'method' => 'POST',
-            'url' => route('application.store'),
+            'url' => route('application_form.store'),
             'files' => true
         ]);
 
