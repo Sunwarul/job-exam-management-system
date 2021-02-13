@@ -20,7 +20,7 @@
         <div class="content-wrapper">
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
+                <div class="container-fluid" id="app">
                     @yield('content')
                 </div><!-- /.container-fluid -->
             </section>
