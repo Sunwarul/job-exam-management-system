@@ -12,7 +12,7 @@ use App\Http\Controllers\ApplicationFormController;
 Route::get('/', [GuestPagesController::class, 'welcome'])->name('welcome');
 
 
-// Show job application form and register user after submitting it
+// Show job application form and register user after submitting it, upload photo & signature.
 Route::get('/apply', [ApplicationFormController::class, 'create'])->name('application.index');
 Route::post('/apply', [ApplicationFormController::class, 'store'])->name('application.store');
 
@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// Admin backend, create job forms, verify payments, manage users, and whole application
+// Admin backend, create job forms, verify payments, manage users, and other administrative tasks
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
     Route::resource('forms', FormController::class);
     Route::resource('users', UserController::class);
