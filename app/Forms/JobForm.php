@@ -26,12 +26,10 @@ class JobForm extends Form
                     'class' => 'form-control-file',
                 ],
             ])
-            ->add('exam_date', 'date', [
-                'rules' => 'required'
-            ])
+            ->add('exam_date', 'date')
             ->add('exam_activity_status', 'select', [
                 'choices' =>  ['not_taken' => 'Not taken yet', 'taken' => 'Exam Taken',],
-                'selected' => 'not_taken',
+                'selected' => $this->getData('selected') ?? 'not_taken',
                 'rules' => 'required'
             ])
             ->add('Create Exam', 'submit', [
