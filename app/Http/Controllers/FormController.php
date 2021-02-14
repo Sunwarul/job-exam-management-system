@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Forms\JobForm;
 use App\Models\Form;
+use App\Forms\JobForm;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Kris\LaravelFormBuilder\FormBuilder;
 
 class FormController extends Controller
@@ -59,9 +60,6 @@ class FormController extends Controller
                 'exam_circular_file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             ]);
 
-            // $imageName = time() . '.' . $request->exam_circular_file->extension();
-            // $imageName = $request->exam_circular_file->storeAs('images', $imageName, 'public');
-
             $request['exam_circular'] = $request->file('exam_circular_file')->store('jobs', 'public');
         }
         Form::create($request->except(['exam_circular_file']));
@@ -88,46 +86,13 @@ class FormController extends Controller
     public function edit($id, FormBuilder $formBuilder)
     {
         $jobForm = \App\Models\Form::findOrFail($id);
-        // $form = $formBuilder->create(JobForm::class, [
-        //     'method' => 'PUT',
-        //     'url' => route("forms.update", $jobForm),
-        //     'model' => $jobForm,
-        // ]);
-        $form = $formBuilder->createByArray([
-            [
-                "name" => "exam_name",
-                "type" => "text",
-            ],
-            [
-                "name" => "exam_description",
-                "type" => "textarea",
-            ],
-            [
-                "name" => "exam_circular_file",
-                "type" => "file",
-            ],
-            [
-                "name" => "exam_date",
-                "type" => "date",
-                "rules" => ["required"],
-                "value" => $jobForm["exam_date"],
-            ],
-            [
-                "name" => "exam_activity_status",
-                "type" => "select",
-                "choices" => ["taken" => "Taken", "not_taken" => "Not Taken"],
-                "selected" => $jobForm["exam_activity_status"]
-            ],
-            [
-                "type" => "submit",
-                "name" => "Update"
-            ]
-        ], [
+        $form = $formBuilder->create(JobForm::class, [
+            'url' => route('forms.update', $jobForm->id),
             'method' => 'PUT',
-            'url' => route("forms.update", $jobForm),
             'model' => $jobForm,
+            // Pass optional data into JobForm::class from here
+            'data' => ['selected' => $jobForm['exam_activity_status'],],
         ]);
-
         return view('admin.forms.edit', compact('form'));
     }
 
@@ -141,7 +106,23 @@ class FormController extends Controller
     public function update(Request $request, $id)
     {
         $jobForm = \App\Models\Form::findOrFail($id);
-        $jobForm->update($request->all());
+
+        // If circular file not selected to update, skip. Enter this block otherwise.
+        if (isset($request['exam_circular_file'])) {
+            // Delete old circular file
+            Storage::disk('public')->delete($jobForm['exam_circular']);
+
+            // Validate newly upload file
+            $request->validate([
+                'exam_circular_file' => 'mimes:jpeg,png,jpg,gif,svg,pdf',
+            ]);
+
+            // Upload file, and put the $path into $request['exam_circular'] variable
+            $request['exam_circular'] = $request->file('exam_circular_file')->store('jobs', 'public');
+        }
+
+        // Update every data, without exam_circular_file one.
+        $jobForm->update($request->except(['exam_circular_file']));
         return redirect()->route("forms.index")->with("success", "Updated successfully!");
     }
 
