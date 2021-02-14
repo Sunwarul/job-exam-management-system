@@ -1891,7 +1891,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    fetch("http://apply.test/api/users").then(function (res) {
+    fetch("https://apply.test/api/users").then(function (res) {
       return res.json();
     }).then(function (res) {
       return _this.users = res;
