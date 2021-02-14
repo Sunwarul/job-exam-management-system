@@ -39,25 +39,19 @@
                                 @foreach ($forms as $form)
                                     <tr>
                                         <td>{{ $form->exam_name }}</td>
-                                        <td>{{ $form->exam_circular_file }}</td>
+                                        <td>
+                                            <img src="{{ asset('storage') . '/' . $form->exam_circular }}"
+                                                alt="Exam image" width="100" />
+                                        </td>
                                         <td>{{ $form->exam_date }}</td>
                                         <td>{{ $form->exam_activity_status == 'taken' ? 'Already Taken ✅' : 'Not Taken Yet 🔜' }}
                                         </td>
                                         <td>
-                                            <a href="">Edit</a>
+                                            <a href="{{ route('forms.edit', $form->id) }}">Edit</a>
                                         </td>
                                     </tr>
                                 @endforeach
                             </tbody>
-                            {{-- <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Circular File</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot> --}}
                         </table>
                     </div>
                     <!-- /.card-body -->

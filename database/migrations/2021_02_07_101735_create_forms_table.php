@@ -17,7 +17,7 @@ class CreateFormsTable extends Migration
             $table->id();
             $table->string('exam_name');
             $table->string('exam_description')->nullable();
-            $table->string('exam_circular_file')->nullable();
+            $table->string('exam_circular')->nullable();
             $table->timestamp('exam_date');
             $table->enum('exam_activity_status', ['taken', 'not_taken'])->default('not_taken');
             $table->timestamps();

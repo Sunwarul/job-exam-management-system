@@ -15,7 +15,7 @@
     <div class="wrapper">
 
         @include('partials.navbar')
-
+        @include('messages')
         @include('partials.siderbar')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
