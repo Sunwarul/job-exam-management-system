@@ -80,6 +80,7 @@ class ApplicationFormController extends Controller
             'application_id' => $application->id,
             'payment_method' => $request->payment_method,
             'payment_account_number' => $request->payment_account_number,
+            'payment_amount' => $request->payment_amount,
             'transaction_number' => $request->transaction_number
         ]);
 

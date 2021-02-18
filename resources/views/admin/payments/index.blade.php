@@ -16,10 +16,10 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-around">
                         <div>
-                            <h1 class="">All Examination</h1>
+                            <h1 class="">Payments</h1>
                         </div>
                         <div>
-                            <h1><a href="{{ route('forms.create') }}" class="btn btn-primary">Create New Examination</a>
+                            <h1><a href="{{ route('payments.create') }}" class="btn btn-danger">Create Manual Payment</a>
                             </h1>
                         </div>
                     </div>
@@ -28,18 +28,31 @@
                         <table id="example1" class="table table-bordered table-striped text-center">
                             <thead>
                                 <tr>
-                                    <th>User</th>
-                                    <th>Application ID</th>
+                                    <th>Applicant Name</th>
+                                    <th>Form ID</th>
+                                    <th>Payment Method</th>
+                                    <th>Account Number</th>
                                     <th>Amount</th>
-                                    <th>Method</th>
                                     <th>Transaction ID</th>
-                                    <th>Time</th>
+                                    <th>Payment Time</th>
+                                    <th>Status</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($payments as $payment)
                                     <tr>
-                                        <td>{{ $payment }}</td>
+                                        <td>{{ $payment->user->name }}</td>
+                                        <td>{{ $payment->application->id }}</td>
+                                        <td>{{ $payment->payment_method }}</td>
+                                        <td>{{ $payment->payment_account_number }}</td>
+                                        <td>{{ $payment->payment_amount }}</td>
+                                        <td>{{ $payment->transaction_number }}</td>
+                                        <td>{{ $payment->created_at }}</td>
+                                        <td>
+                                            <button
+                                                class="btn btn-{{ $payment->status == 'unverified' ? 'danger' : 'success' }}">{{ $payment->status }}</button>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

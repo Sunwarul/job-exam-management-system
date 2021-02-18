@@ -19,7 +19,9 @@ class CreatePaymentsTable extends Migration
             $table->integer('application_id');
             $table->string('payment_method');
             $table->string('payment_account_number');
+            $table->string('payment_amount');
             $table->string('transaction_number');
+            $table->enum('status', ['verified', 'unverified'])->default('unverified');
             $table->timestamps();
         });
     }

@@ -44,7 +44,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('payments.index') }}" class="nav-link">
                             <i class="nav-icon fas fa-dollar-sign"></i>
                             <p>
                                 Payments

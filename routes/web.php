@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SongsController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\GuestPagesController;
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\ApplicationFormController;
 
 // Welcome page
@@ -27,4 +28,5 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::resource('forms', FormController::class);
     Route::resource('users', UserController::class);
     Route::resource('applications', ApplicationController::class);
+    Route::resource('payments', PaymentController::class);
 });

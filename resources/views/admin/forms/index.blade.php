@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-around">
                         <div>
-                            <h1 class="">All Examination</h1>
+                            <h1 class="">All Examination Form</h1>
                         </div>
                         <div>
                             <h1><a href="{{ route('forms.create') }}" class="btn btn-primary">Create New Examination</a>

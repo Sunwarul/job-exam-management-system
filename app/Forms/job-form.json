@@ -263,8 +263,14 @@
     {
         "label": "***Enter Payment Account Number",
         "name": "payment_account_number",
-        "type": "text",
+        "type": "tel",
         "placeholder": "Enter your payment methods account number"
+    },
+    {
+        "label": "***Enter Payment Amount",
+        "name": "payment_amount",
+        "type": "number",
+        "placeholder": "Enter your payment amount"
     },
     {
         "label": "***Enter the Transaction ID / Receipt Number you get after payment",
