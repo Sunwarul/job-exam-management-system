@@ -14,12 +14,13 @@ Job applicants can apply for certain job posts through a descriptive application
 1. Extract the project
 2. `cd extacted_project_dir_name`
 3. Open up the terminal / bash and run `composer install`
-4. Run `cp .env.example .env` or simply rename the `.env.example` file into `.env` and change database connection credentials (host, user-name, password) according to your local settings
-5. Run `php artisan migrate --seed` to migrate all migrations and seed default admin and users data.
-6. Run `npm install` to install JavaScript related dependencies
-7. Run `npm run dev` to compile js / vue files
-8. Run `php artisan serve` to serve locally
-9. Open up a browser and go to localhost:8000 to access the application front-end
+4. Run `cp .env.example .env` or simply rename the `.env.example` file into `.env` 
+5. Create a database in `mysql` and change database connection credentials (host name, database name, user-name, password) in `.env` file according to your local mysql settings
+6. Run `php artisan migrate --seed` to migrate all migrations and seed default admin and users data. If anything goes wrong, then re-check the `.env` file and confirm all of `mysql` settings are correct.
+7. Run `npm install` to install JavaScript related dependencies
+8. Run `npm run dev` to compile js, vue, scss files
+9. Run `php artisan serve` to serve the project locally
+10. Open up a browser and go to localhost:8000 to access the application front-end
 
 ### Screen-shots
 
@@ -52,6 +53,6 @@ Create pull-requests if you wanna contribute to this project. and get connected 
 </p>
 
 
-### **Table of contents**
+### Table of Contents
 
 [TOC]
