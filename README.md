@@ -25,14 +25,14 @@ Job applicants can apply for certain job posts through a descriptive application
 
 <u>Here are some screen-shots from the application:</u>
 
-![](images/Screenshot from 2021-02-18 12-22-37.png)
+![](images/Screenshot%20from%202021-02-18%2012-22-37.png)
 
-![](images/Screenshot from 2021-02-18 12-22-41.png)
+![](images/Screenshot%20from%202021-02-18%2012-22-41.png)
 
-![](images/Screenshot from 2021-02-18 12-23-05.png)
+![](images/Screenshot%20from%202021-02-18%2012-23-05.png)
 
-![](images/Screenshot from 2021-02-18 12-23-10.png)
+![](images/Screenshot%20from%202021-02-18%2012-23-10.png)
 
-![](images/Screenshot from 2021-02-18 12-23-14.png)
+![](images/Screenshot%20from%202021-02-18%2012-23-14.png)
 
-![](images/Screenshot from 2021-02-18 12-23-18.png)
+![](images/Screenshot%20from%202021-02-18%2012-23-18.png)
