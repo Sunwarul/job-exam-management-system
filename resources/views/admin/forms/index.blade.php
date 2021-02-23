@@ -40,8 +40,12 @@
                                     <tr>
                                         <td>{{ $form->exam_name }}</td>
                                         <td>
-                                            <img src="{{ asset('storage') . '/' . $form->exam_circular }}"
-                                                alt="Exam image" width="100" />
+                                            @if ($form->exam_circular)
+                                                <img src="{{ asset('storage') . '/' . $form->exam_circular }}"
+                                                    alt="Exam image" width="100" />
+                                            @else
+                                                -
+                                            @endif
                                         </td>
                                         <td>{{ $form->exam_date }}</td>
                                         <td>{{ $form->exam_activity_status == 'taken' ? 'Already Taken ✅' : 'Not Taken Yet 🔜' }}
